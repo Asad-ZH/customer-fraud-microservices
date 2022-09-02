@@ -17,6 +17,7 @@ public class FraudController {
     public FraudCheckResponse isFraudster(@PathVariable(("customerId")) Integer customerId) {
 
         boolean isFraudulentCustomer = fraudCheckService.isFraudsterCustomer(customerId);
+
         return new FraudCheckResponse(isFraudulentCustomer);
     }
 }
