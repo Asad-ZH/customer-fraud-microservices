@@ -10,8 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class CustomerService {
+
+    //    private final RestTemplate restTemplate;
+
     private final CustomerRepository customerRepository;
-//    private final RestTemplate restTemplate;
     private final FraudClient fraudClient;
     private final NotificationClient notificationClient;
 
@@ -21,6 +23,7 @@ public class CustomerService {
                 .lastName(customerRegistrationRequest.lastName())
                 .email(customerRegistrationRequest.email())
                 .build();
+
         customerRepository.saveAndFlush(customer);
 
 //        FraudCheckResponse fraudCheckResponse = restTemplate.getForObject(
