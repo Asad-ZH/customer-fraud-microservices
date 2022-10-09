@@ -11,7 +11,7 @@ import javax.persistence.SequenceGenerator;
 @Data
 @Builder
 @Entity
-public class Customer {
+public class Customer{
 
     @Id
     @SequenceGenerator(name = "customer_id_sequence", sequenceName = "customer_id_sequence")
@@ -25,6 +25,7 @@ public class Customer {
     private String email;
 
 
+    public Customer() {
 
-
+    }
 }
